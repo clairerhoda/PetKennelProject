@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lemonada:wght@300&family=Poppins:wght@300;400;500;600&family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="icon" href="media/kennellogo.png">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel='stylesheet' type="text/css" href="css/startScreen.css">
+    <title>Pet Kennel</title>
+</head>
+<body>
+    <div id="body">
+        <div id="nav-bar">
+            <div id="title-text">Pet Kennel Tracker</div>
+        </div>
+        <div class="center">
+            <div id="login-box">
+                <!-- &#128062; -->
+                <div id="welcome-title">Welcome</div>
+                <div onClick="location.href='loginScreen.html';" id="login-btn">Returning User</div>
+                <div onClick="location.href='newEmployeeScreen.html';" id="new-employee-btn">New User</div>
+            </div>
+        </div>
+    </div> 
+</body>
+</html>
+
+<!-- Steps to Perform Full Functioning Website
+1. In ProjectPetKennel folder, run command: node index-rest.js
+2. Next start the mongodb community database (brew services start mongodb-community)
+3. Run website on localhost in any port other than 3000.
+ -->

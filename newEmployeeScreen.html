@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lemonada:wght@300&family=Poppins:wght@300;400;500;600&family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="icon" href="media/kennellogo.png">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel='stylesheet' type="text/css" href="css/newEmployeeScreen.css">
+    <title>Pet Kennel</title>
+</head>
+<body>
+    <div id="body">
+        <div id="nav-bar">
+            <div id="title-text">Pet Kennel Tracker</div>
+        </div>
+        <div class="center">
+            <form id="login-box">
+                <div id="go-back-btn" onClick="location.href='startScreen.html';">&#x2190;</div>
+                <label id="label">Employee ID:</label>
+                <input autocomeplete="off" name="employeeID" id="employee-id" class="employee-fill-out" placeholder="Enter newly assigned Employee ID" style="margin-bottom: 50px;" type="text">
+                <label id="label">Password:</label>
+                <input autocomplete="off" name="password" id="password" class="employee-fill-out" placeholder="Create Password" type="password">
+                <button id="login-btn"type="submit">Create</button>
+                <div id="login-error-msg"></div>
+            </form>
+        </div>
+    </div>
+    <script type="module" src="./newEmployee.js" charset="utf-8"></script>
+</body>
+</html>

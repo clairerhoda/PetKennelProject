@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="icon" href="media/kennellogo.png">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel='stylesheet' type="text/css" href="css/homeScreen.css">
+    <title>Pet Kennel</title>
+</head>
+<body>
+    <div id="body">
+        <div id="warning">
+            <div id="white-box">
+                <div id="emerg-text1">The Emergency Button was selected.</div>
+                <div id="emerg-text2">If you are in need of medical vet help, please confirm </div>
+                <div id="emerg-text2">with the button below and help will be on it’s way.</div>
+                <div onClick="document.querySelector('#warning').style.display = 'none'" id="cancel-btn">Cancel</div>
+                <div id="request-btn">Request Emergency Services</div>
+            </div>
+        </div>
+        <div id="details">
+            <div id="details-box">
+                <div onClick="document.querySelector('#details').style.display = 'none'" id="close-btn">Close</div>
+                <img id="pet-photo-more-details" >
+                <div id="pet-details">
+                    <div id="details-pet-name">Name: </div>
+                    <div id="details-breed">Breed: </div>
+                    <div id="details-checkIn">Checked In: </div>
+                    <div id="details-checkOut">Check Out: </div>
+                    <div id="details-owner-name">Owner Name: </div>
+                    <div id="details-email">Email: </div>
+                    <div id="details-phone-number">Phone Number:</div>
+                    <div id="details-notes">Pet Details/Notes:</div>
+                </div>
+            </div>
+        </div>
+        <div id="nav-bar">
+            <div onClick="location.href='homeScreen.html';" id="title-text">Pet Kennel Tracker</div>
+            <div id="right-align">
+                <input id="search" placeholder="Search Pet" type="text">
+                <div onClick="location.href='checkInScreen.html';" id="check-in">Check In</div>
+                <div onClick="location.href='checkOutScreen.html';" id="check-out">Check Out</div>
+                <svg onClick="document.querySelector('#warning').style.display= 'flex'" style="cursor:pointer; padding-bottom: 5px" width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <rect x="2" y="16" width="16" height="2" fill="white"/>
+                    <rect y="18" width="20" height="2" fill="white"/>
+                    <rect x="5" y="12" width="10" height="4" fill="white"/>
+                    <circle cx="10" cy="12" r="5" fill="white"/>
+                    <path d="M10.3159 15.789H9.68895L9.41395 10.146H10.5909L10.3159 15.789ZM9.31495 17.406C9.31495 17.1347 9.38095 16.944 9.51295 16.834C9.64495 16.724 9.80628 16.669 9.99695 16.669C10.1803 16.669 10.3379 16.724 10.4699 16.834C10.6093 16.944 10.6789 17.1347 10.6789 17.406C10.6789 17.67 10.6093 17.8607 10.4699 17.978C10.3379 18.0953 10.1803 18.154 9.99695 18.154C9.80628 18.154 9.64495 18.0953 9.51295 17.978C9.38095 17.8607 9.31495 17.67 9.31495 17.406Z" fill="#77B8DD"/>
+                    <path d="M4.67033 7.32742L1.86348 4.80321L2.51261 4.22995L4.67033 7.32742Z" fill="white"/>
+                    <path d="M15.3747 7.32725L17.5326 4.22986L18.1817 4.80314L15.3747 7.32725Z" fill="white"/>
+                    <path d="M10.0507 5.00986L9.14667 1.25364L10.8785 1.23611L10.0507 5.00986Z" fill="white"/>
+                </svg>
+            </div>
+        </div>
+        <div class="center">
+            <div id="title-header">
+                <img  class="title-pic" style="margin-right: 50px" src="media/outlineDog.jpeg">
+                <div id="title-home">Pet Guest List</div>
+                <img class="title-pic" style="margin-left: 90px; transform: scaleX(-1)" src="media/outlineCat.jpeg">
+            </div>
+        </div>
+    </div>
+    <script src="./home.js" charset="utf-8"></script>
+
+    <script type="text/javascript">
+        const node = document.querySelector("#search");
+        node.addEventListener("keyup", function(event) {
+            if (event.key === "Enter") {
+                location.href='searchScreen.html';
+                sessionStorage.setItem("search_pet", node.value);
+                window.location.replace("searchScreen.html");
+            }
+        });
+    </script>
+</body>
+</html>
