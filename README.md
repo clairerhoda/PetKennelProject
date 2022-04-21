@@ -9,8 +9,8 @@ This project was created using HTML / CSS / JavaScript / MongoDB.
 ### `npm install express --save`
 ### `npm install --save-dev mongodb`
 ### `npm install --save-dev cors`
-3. If you used brew to install mongodb, use the command:
-### `brew services start mongodb-community`to run the database
+3. If you used brew to install mongodb, to run the database use the command:
+### `brew services start mongodb-community`
 4. In a separate terminal, run the index-rest.js with the command:
 ### `node index-rest.js`
 5. Lastly, run the index.js file using:
