@@ -92,7 +92,6 @@ xhr.onreadystatechange = function() {
                 sendPhoto.appendChild(document.createTextNode("Send Photo"))
                 sendPhoto.style.cursor = "pointer"
                 sendPhoto.addEventListener("click", (e) => {
-                    console.log("hit")
                     window.location.href = `mailto: ${s.email}`;
                 })
 

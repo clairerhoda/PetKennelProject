@@ -55,7 +55,6 @@
         const node = document.querySelector("#search");
         node.addEventListener("keyup", function(event) {
             if (event.key === "Enter") {
-                console.log(node.value)
                 location.href='searchScreen.html';
                 sessionStorage.setItem("search_pet", node.value);
                 window.location.replace("searchScreen.html");

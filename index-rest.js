@@ -36,7 +36,6 @@ app.get('/api/pets', function(req, res){
 
 app.post('/api/pets', function(req, res) {
 	// Your custom logic to process the HTTP request 
-	console.log(req.body) 
     MongoClient.connect(url, function(err, conn) {
         if (err) console.log(err)
         else {
@@ -86,20 +85,6 @@ app.put('/api/pets/:id', function(req, res){
 	  })
 	})
 })
-
-// app.delete('/api/pets', (req, res) => {
-//     res.send("DELETE Request Called")
-//     MongoClient.connect(url, function(err, conn) {
-//         if (err) throw err;
-//         var dbo = conn.db('kennel');
-//         var myquery = { petName: "PetName1" };
-//         dbo.collection("pets").deleteMany(myquery, function(err, obj) {
-//           if (err) throw err;
-//           conn.close();
-//         });
-//       });
-//   })
-
 
 // Employee Data
 app.get('/api/employees', function(req, res){
@@ -154,15 +139,4 @@ app.listen(app.get('port'), function(){
 	console.log('Express server started on http://localhost:' + app.get('port'));
 	console.log(__dirname)
 })
-
-
-// // npm init
-// 0. in package.json remove the line: type: module for express to run properly!!
-// 1. npm install express --save
-// 2. npm install --save-dev mongodb
-// 3. npm install --save-dev cors
-// MAKE SURE MONGODB IS INSTALLED... used these brew commands ot get it installed: brew tap mongodb/brew;brew install mongodb-community
-// 4. start the mongodb server: brew services start mongodb-community; (end with: brew services stop mongodb-community)
-// 4. run code with node index-rest.js 
-// 5. Go to postman to test out the post and gets, or go to port where website is running with Go live button down here vvv
 

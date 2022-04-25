@@ -7,7 +7,6 @@ loginButton.addEventListener("click", (e) => {
     e.preventDefault();
     const employeeID = loginForm.employeeID.value;
     const password = loginForm.password.value;
-    console.log("what I entered", employeeID, password)
     if (employeeID !== "" && password !== "" ) {
         const xhr = new XMLHttpRequest()
         xhr.open('GET', 'http://localhost:3000/api/employees')
@@ -15,8 +14,6 @@ loginButton.addEventListener("click", (e) => {
         xhr.onreadystatechange = function() {
             if (this.readyState == 4 && this.status == 200) {
                 for (const s of this.response) {
-                    console.log(s.employeeID)
-                    console.log(s.password)
                     if (s.employeeID === employeeID && s.password === password) {
                         loginErrorMsg.style.opacity = 0;
                         location.reload();

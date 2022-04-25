@@ -214,6 +214,16 @@ body, html {
     z-index: -1;
 }
 
+#home-details {
+    display: none;
+    flex-direction: row;
+    width: 900px;
+    height: 400px;
+    background-color: #F5F5F5;
+    align-items: center;
+    justify-content: center;
+}
+
 #pet-info-box {
     display: flex;
     flex-direction: row;

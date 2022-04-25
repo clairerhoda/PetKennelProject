@@ -2,30 +2,14 @@ const xhr = new XMLHttpRequest()
 xhr.open('GET', 'http://localhost:3000/api/pets')
 xhr.responseType = 'json'
 xhr.onreadystatechange = function() {
+    petCount = 0
     if (this.readyState == 4 && this.status == 200) {
         const body = document.getElementsByTagName('body')[0]
         const center = document.createElement('div')
         center.setAttribute('class', 'center')
-        if (this.response.length === 0) {
-            const petInfoBox = document.createElement('div');
-            petInfoBox.setAttribute('id', 'pet-info-box');
-
-            const petDetails = document.createElement('div');
-            petDetails.setAttribute('id', 'pet-details'); 
-            petDetails.appendChild(document.createTextNode("No pets in the kennel at this time"))
-            petDetails.style.alignItems = "center"
-            petDetails.style.width = "100%"
-            petDetails.style.fontSize = "22px"
-            petDetails.style.color = "grey"
-
-            petInfoBox.appendChild(petDetails)
-            center.appendChild(petInfoBox)
-            document.getElementById("body").appendChild(center);
-            petInfoBox.setAttribute('class', 'center');
-            return
-        }
         for (const s of this.response) {
-            if (Date.now() < s.checkOut) {
+            if (Date.now() < s.checkOut && s.delete === false) {
+                petCount += 1
                 const petInfoBox = document.createElement('div');
                 petInfoBox.setAttribute('id', 'pet-info-box');        
 
@@ -38,7 +22,6 @@ xhr.onreadystatechange = function() {
 
                 }
                 petInfoBox.appendChild(petImage)
-
                
                 const petDetails = document.createElement('div');
                 petDetails.setAttribute('id', 'pet-details'); 
@@ -95,7 +78,6 @@ xhr.onreadystatechange = function() {
                 sendPhoto.appendChild(document.createTextNode("Send Photo"))
                 sendPhoto.style.cursor = "pointer"
                 sendPhoto.addEventListener("click", (e) => {
-                    console.log("hit")
                     window.location.href = `mailto: ${s.email}`;
                 })
 
@@ -108,6 +90,9 @@ xhr.onreadystatechange = function() {
             }
         }
 
+        if (petCount === 0) {
+            document.getElementById("home-details").style.display = "flex"
+        }
     }
 }
 

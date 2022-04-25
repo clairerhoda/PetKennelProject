@@ -12,7 +12,6 @@ addPetButton.addEventListener("click", (e) => {
     const email = petForm.email.value;
     const checkIn = Date.now();
     const checkOut = new Date(petForm.checkOut.value).getTime();
-    console.log(petForm.checkOut.value)
     const notes = petForm.notes.value;
     var type;
     var ele = document.getElementsByName('type');            
